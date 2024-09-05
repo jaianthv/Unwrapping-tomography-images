@@ -18,8 +18,8 @@ returns *cx,cy* - coordinates of center of mass <br>
 list(contours) - obtained from cv.findContours <br>
 returns  *new list of contours* - after removing the smaller ones <br>
 
-### Unwrap_single_image.py
+### *Unwrap_single_image.py*
 
 1. `get_first_layer_contour(image)` <br>
 image - binary image, np.array, dtype = uint8. <br>
-returns *outer layer* - outer reference layer of the image with 8-point connectivity. Removes small countours, correct for a full closure of the object if convex hull fails.  
+returns *outer layer* - outer reference layer of the image by connecting the contour points with 8-point connectivity. Removes small countours, correct for a full closure of the object if convex hull fails.  
