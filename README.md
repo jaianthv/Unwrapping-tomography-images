@@ -9,11 +9,11 @@ The unwrapping codes developed can digitally unroll 2D slices of a 3D object mea
 
 ## List of functions available
 
-1.	`get_center(image, str)`
-image = np.array
-str = “Show” to display image or None
-returns *cx,cy* - coordinates of center of mass
+1.	`get_center(image, str)` <br>
+image = np.array <br>
+str = “Show” to display image or None <br>
+returns *cx,cy* - coordinates of center of mass <br>
 
-2.	`Clean_small_contours(list(contours))`
-list(contours) - obtained from cv.findContours
-returns  *new list of contours* - after removing the smaller ones
+2.	`Clean_small_contours(list(contours))`<br>
+list(contours) - obtained from cv.findContours <br>
+returns  *new list of contours* - after removing the smaller ones <br>
