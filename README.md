@@ -22,8 +22,11 @@ returns  *new list of contours* - after removing the smaller ones <br>
 image = np.array, binary 0 (background) and 1 (object). Hollow objects also works, e.g. segmented coating layer like. <br>
 returns *Updated contour points, number of dilation performed* <br>
 Note - For the very first reference layer, the matrix kernel for dilation is kept at 5 x 5, this will make sure that the reference layer is little outside the edge of the object. <br>  
+
 5. `correct_check_single_contour(image, contours, k_i)`<br>
-image = np.array, binary<br>
+image = np.array, binary, just to make an empty image<br>
+contours = updated contours from `check_single_contour_new` <br>
+k_i = kernel size, default = 5 <br>
 
 
 
