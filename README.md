@@ -27,6 +27,7 @@ Note - For the very first reference layer, the matrix kernel for dilation is kep
 image = np.array, binary, just to make an empty image<br>
 contours = updated contours from `check_single_contour_new` <br>
 k_i = kernel size, default = 5 <br>
+returns
 
 
 
