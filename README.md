@@ -29,6 +29,11 @@ contours = updated contours from `check_single_contour_new` <br>
 k_i = kernel size, default = 5 <br>
 returns *corrected outer layer with contour drawn (2D array), new contour compensating for the dilation*
 
+6. `check_eight_point_convol_op(img)`<br>
+img = np.array - outlayer reference line with line width 1, dtype=np.uint8, line value should be 1 and rest should be 0.<br>
+
+
+
 
 
 ### *Unwrap_single_image.py*
