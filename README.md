@@ -55,6 +55,11 @@ Other functions required - `check_open_ends_convol_op`, `remove_defects` <br>
 Iterates (default - 80 iterations) apply kernel - [[-1,-1,-1],[-1,1,-1],[-1,-1,-1]], multiply with original image, convert to absolute value, remove every pixel value above "1" (protruding pixels). After each iteration check if any protruding ends are present by `check_open_ends_convol_op`. If no open ends are present, returns the corrected image. <br>
 returns *corrected image*
 
+10. `get_first_point(img)` <br>
+img = image with line after correcting for defects. Requires function `find_point`.
+returns *coordinates of a starting point*
+
+11. `findpoint(img, cx,cy)` <br>
 
 ### *Unwrap_single_image.py*
 
