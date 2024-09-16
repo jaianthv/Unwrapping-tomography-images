@@ -38,7 +38,9 @@ returns *True/False*
 img = np.array = any line with line with/without width 1, dtype=np.uint8, line value should be 1 and rest should be 0.<br>
 returns *thin image with 8-point connectivity*
 
-
+8. `check_open_ends_convol_op(img)`<br>
+img = np.array - line with width 1, dtype=np.uint8, line value should be 1 and rest should be 0.<br>
+returns *True - if there are open ends/ false - otherwise*
 
 
 
