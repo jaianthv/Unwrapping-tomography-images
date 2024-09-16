@@ -34,6 +34,9 @@ img = np.array - any line with line width 1, dtype=np.uint8, line value should b
 Checks if there are any points with 4-point connectivity<br>
 returns *True/False*
 
+7. `correct_by_thin(img)`<br>
+img = np.array = any line with line with/without width 1, dtype=np.uint8, line value should be 1 and rest should be 0.<br>
+returns *thin image with 8-point connectivity*
 
 
 
