@@ -64,6 +64,16 @@ img = image
 cx, cy = coorinates of the center of mass of the sample, type = int.
 returns *x_coordinate, y_coordinate*
 
+12. `get_start_end_open_end(img)`<br>
+img = spiral structure or line with two open end (start and end) <br>
+This function identifies the open ends. Then by using function `determine_points` identifies start and the end points. By default the point closer to the origin [0,0] of the image, top left corner is considered start point. One can change this if needed.
+returns *start point coordinates[x1,y1], end point coordinates[x2,y2]*  
+
+13. `determine_points(point_1, end_points)`<br>
+This function determines which coordinates in the list of end_points is closer to point_1, by measuring the Eucledian distance. It goes inside `get_start_end_open_end` function.<br>
+returns  *start point coordinates[x1,y1], end point coordinates[x2,y2]*
+
+
 ### *Unwrap_single_image.py*
 
 1. `get_first_layer_contour(image)` <br>
