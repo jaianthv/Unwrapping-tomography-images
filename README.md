@@ -48,7 +48,7 @@ img = np.array - with defective line image with line width as 1, line value shou
 unique = list of unique elements obtained from np.unique.<br>
 counts = list of counts from the elements obtained from np.unique.<br>
 kernel = default - [[1,1,1],[1,0,1],[1,1,1]] <br>
-returns *Image - after removing defective pixels.*<br>
+returns *Image - after removing defective pixels.*
 
 10. `remove_protruding_open_ends(img)`<br>
 Other functions required - `check_open_ends_convol_op`, `remove_defects` <br>
