@@ -60,6 +60,9 @@ img = image with line after correcting for defects. Requires function `find_poin
 returns *coordinates of a starting point*
 
 11. `findpoint(img, cx,cy)` <br>
+img = image
+cx, cy = coorinates of the center of mass of the sample, type = int.
+returns *x_coordinate, y_coordinate*
 
 ### *Unwrap_single_image.py*
 
