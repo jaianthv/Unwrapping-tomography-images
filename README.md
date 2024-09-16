@@ -60,8 +60,9 @@ img = image with line after correcting for defects. Requires function `find_poin
 returns *coordinates of a starting point*
 
 11. `findpoint(img, cx,cy)` <br>
-img = image
-cx, cy = coorinates of the center of mass of the sample, type = int.
+img = image <br>
+cx, cy = coorinates of the center of mass of the sample, type = int.<br>
+From the center of the image, this functions draws a line horizontally to the left. The point where it overlaps with reference line from the object is considered as the starting point. <br>
 returns *x_coordinate, y_coordinate*
 
 12. `get_start_end_open_end(img)`<br>
