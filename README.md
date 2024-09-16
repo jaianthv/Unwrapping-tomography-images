@@ -42,6 +42,18 @@ returns *thin image with 8-point connectivity*
 img = np.array - line with width 1, dtype=np.uint8, line value should be 1 and rest should be 0.<br>
 returns *True - if there are open ends/ false - otherwise*
 
+9. `remove_defects(img, unique, counts, kernel)`<br>
+It is a nested function of `remove_protruding ends` - can be modified if new kernel is developed. <br>
+img = np.array - with line image with line width as 1, line value should be 1 and rest should be zero <br>
+unique = list of unique elements obtained from np.unique.<br>
+counts = list of counts from the elements obtained from np.unique.<br>
+kernel = default - [[1,1,1],[1,0,1],[1,1,1]] <br>
+returns *Image - after removing one pixel from the protruding end.*<br>
+
+10. `remove_protruding_open_ends(img)`<br>
+Other functions required - `check_open_ends_convol_op`, `remove_defects` <br>
+Iterates (default - 80 iterations) `remove_defects` function, after each iteration check if any protruding ends are present by `check_open_ends_convol_op`. If no open ends are present, returns the corrected image. <br>
+returns *corrected image*
 
 
 ### *Unwrap_single_image.py*
