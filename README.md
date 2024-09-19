@@ -111,5 +111,9 @@ x,y = x and y coordinates obtained from the unwrapping algorithm (`unwrap_single
 return *list of pixel value of the unwrapped coordinates in a 1D array*
 
 3. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
-4. 
+4. `convert_2_imageD(array_1D,number,list_data_length, start, end)` <br>
+5. `order_layers(length_layer_one, new_layer_array)`<br>
+6. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
+7. `get_files(folder)` <br>
+8. `unwrap_folder(folder, no_layers, use_layer_point, border_type)`<br>
 
