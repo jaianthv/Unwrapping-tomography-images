@@ -74,6 +74,20 @@ returns *start point coordinates[x1,y1], end point coordinates[x2,y2]*
 This function determines which coordinates in the list of end_points is closer to point_1, by measuring the Eucledian distance. It goes inside `get_start_end_open_end` function.<br>
 returns  *start point coordinates[x1,y1], end point coordinates[x2,y2]*
 
+14. `close_2_end(img, first_outer_layer_image)` <br>
+To identify how much area of the original image has been transformed. With convex hull less than 0.1% volume can be unwrapped, however with contour we find it is upto 1 %. So default is 1%. Can be changed if needed. <br>
+returns *True/False if the condition is met* in the Unwrapping procedure the number of layers to unwrap will break if it had reached this limit
+
+15. `get_ref_fill_image(image)`<br>
+With an input border image, it returns the center part of the image filled with 1 and outer 0.
+returns *image with center filled*
+
+16. `check_corner_pixels(image)`<br>
+The thinning and the remove protruding function sometime missed defective pixels, especially the corner pixels. With this function we multiply the pixels with the directional matrix and find those defective pixels and remove them. Once done, it will again check for the presence of anymore protruding pixels.
+returns *image with corrected pixels*
+
+
+
 
 ### *Unwrap_single_image.py*
 
