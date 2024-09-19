@@ -112,8 +112,22 @@ x,y = x and y coordinates obtained from the unwrapping algorithm (`unwrap_single
 return *list of pixel value of the unwrapped coordinates in a 1D array*
 
 3. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
+Unwrap a given image with the given number of layers.<br>
+No_of_layers = depends on the image, even if you put a large number, the interation will stop once 99 % volume is transformed when using contour and 99.9 5 when using convex hull approach.<br>
+image = Outer line/reference image. <br>
+raw_image = image to be unwrapped, with no change in the bitness. <br>
+use_layer_start_point = default = None, you can put "Yes", then starting point for the next concentric layer will be taken from the algorithm. see `unwrap_single_line`, `find_point` in `Utils.py`<br>
+returns *unwrapped image*
 4. `convert_2_imageD(array_1D,number,list_data_length, start, end)` <br>
+The Unwrapped coordinates are stored as a single array, they are resized in this function. <br>
+array_1D = pixel vaules of the unwrapped image<br>
+number = number of layers actually unwrapped by the algorithm, may change with the user input if the volume limit defined `close_2_end` in `Utils.py` is reached.<br>
+list_data_length = length of each layer unwrapped.<br>
+start, end, list of indices of each layers in list_data_length<br>
+
 5. `order_layers(length_layer_one, new_layer_array)`<br>
+
+
 6. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
 7. `get_files(folder)` <br>
 8. `unwrap_folder(folder, no_layers, use_layer_point, border_type)`<br>
