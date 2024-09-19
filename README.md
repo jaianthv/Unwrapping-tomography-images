@@ -88,7 +88,12 @@ returns *outer layer* - outer reference layer of the image by connecting the con
 1. `unwrap_single_line(img, start_point_est)`<br>
 img = image with single line <br>
 start_point_est = default is None, this option uses the first point estimated by the unwrapping algorithm for each concentric layer. If it is not used, it uses the function `find_point` in `Utils.py`, and estimate starting point each time a new concentric layer is determined.
-
 returns *x_coordinates, y_coordinates of unwrapped line, Next concentric layer, by default the starting point on the new layer determined by the algorithm*
+
+2. `get_image_value(raw_image,x,y)`<br>
+This function will get the image values of the unwrapped layer coordinates.<br>
+raw_image = the original image which need to be unwrapped <br>
+x,y = x and y coordinates obtained from the unwrapping algorithm (`unwrap_single_line`)<br>
+return *list of pixel value of the unwrapped coordinates in a 1D array*
 
 
