@@ -96,4 +96,6 @@ raw_image = the original image which need to be unwrapped <br>
 x,y = x and y coordinates obtained from the unwrapping algorithm (`unwrap_single_line`)<br>
 return *list of pixel value of the unwrapped coordinates in a 1D array*
 
+3. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
+4. 
 
