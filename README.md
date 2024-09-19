@@ -4,8 +4,9 @@ The unwrapping codes developed can digitally unroll 2D slices of a 3D object mea
 ## List of python scripts
 1. Utils.py
 2. Kernel_operation.py
-3. Unwrap_single_image.py
-4. Unwrap_folder.py
+3. Unwrap_runner.py
+4. Unwrap_single_image.py
+
 
 ## List of functions available
 ### *Utils.py*
