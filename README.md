@@ -90,14 +90,6 @@ returns *image with corrected pixels*
 
 
 
-### *Unwrap_single_image.py*
-
-1. `get_first_layer_contour(image)` <br>
-image - binary image, np.array, dtype = uint8. <br>
-returns *outer layer* - outer reference layer of the image by connecting the contour points with 8-point connectivity. Removes small countours, correct for a full closure of the object if convex hull fails.  
-
-
-
 ### *Unwrap_runner.py*
 
 1. `unwrap_single_line(img, start_point_est)`<br>
