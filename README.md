@@ -148,8 +148,8 @@ Unwrap all the images inside a folder saved as .tiff files.<br>
 folder = full path where the files are located. <br>
 no_layers = layers to unwrap<br>
 user_layer_point = Use start point of the algorithm. Default is None.<br>
-border_type = default is convex hull, if countour is needed add "c".<br>
-
+border_type = default is convex hull, if countour is needed add "c", as a string.<br>
+returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with the same name with prefix as "unwrapped".<br>
 
 
 11. `unwrap_folder_multi_process(No_process, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
