@@ -131,4 +131,12 @@ start, end, list of indices of each layers in list_data_length<br>
 6. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
 7. `get_files(folder)` <br>
 8. `unwrap_folder(folder, no_layers, use_layer_point, border_type)`<br>
+9. `unwrap_folder_multi_process(No_process, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+10. `unwrap_folder_single_process_MP(array, List_of_files, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+11. `unwrap_folder_single_process(folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+12. `save_unwrapped_folder(current_folder, destination_folder=None, Layer_image, file)` <br>
+13. `save_single_image(current_folder, destination_folder=None, Layer_image, file)`<br>
+14. `get_first_layer_contour(image)`<br>
+15. `get_first_layer_convex(image)`<br>
+16. `get_image_raw_first(folder, file, extraction_type=None)` <br>
 
