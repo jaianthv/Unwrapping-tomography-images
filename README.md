@@ -170,9 +170,21 @@ returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with th
 
     
 13. `save_unwrapped_folder(current_folder, destination_folder=None, Layer_image, file)` <br>
+This function is used inside unwrapping folder, stores the unwrapped images in a separate folder, default is "Unwrapped".<br>
+returns *None*
 
 14. `save_single_image(current_folder, destination_folder=None, Layer_image, file)`<br>
-15. `get_first_layer_contour(image)`<br>
-16. `get_first_layer_convex(image)`<br>
-17. `get_image_raw_first(folder, file, extraction_type=None)` <br>
+This function is used to save single unwrapped image, unless specified, the unwrapped image will be saved in the same directory as a source image with "unwrapped" as prefix.<br>
+returns *None*
+
+16. `get_first_layer_contour(image)`<br>
+To determine the outer reference layer based on contour points.<br>
+image = np.array, binary, background "0", object "1". <br>
+returns *image with outer layer value 1 and width 1*
+17. `get_first_layer_convex(image)`<br>
+To determine the outer reference layer based on convex hull.<br>
+image = np.array, binary, background "0", object "1". <br>
+returns *image with outer layer value 1 and width 1*
+18. `get_image_raw_first(folder, file, extraction_type=None)` <br>
+
 
