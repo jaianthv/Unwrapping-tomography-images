@@ -124,6 +124,7 @@ array_1D = pixel vaules of the unwrapped image<br>
 number = number of layers actually unwrapped by the algorithm, may change with the user input if the volume limit defined `close_2_end` in `Utils.py` is reached.<br>
 list_data_length = length of each layer unwrapped.<br>
 start, end, list of indices of each layers in list_data_length<br>
+returns *output of order_layer()*
 
 5. `order_layers(length_layer_one, new_layer_array)`<br>
 The lenth of the unwrapped layers decreases radially inwards, this function will assess the length of each layers and resize the layers by padding the edges with zeros. Each layers unwrapped will have the same length after this.<br>
@@ -143,6 +144,13 @@ Mention the folder here and it will retrieve all the tiff files from the folder.
 returns *List of image files ordered*
 
 10. `unwrap_folder(folder, no_layers, use_layer_point, border_type)`<br>
+Unwrap all the images inside a folder saved as .tiff files.<br>
+folder = full path where the files are located. <br>
+no_layers = layers to unwrap<br>
+user_layer_point = Use start point of the algorithm. Default is None.<br>
+border_type = default is convex hull, if countour is needed add "c".<br>
+
+
 
 11. `unwrap_folder_multi_process(No_process, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
 12. `unwrap_folder_single_process_MP(array, List_of_files, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
