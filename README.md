@@ -143,21 +143,44 @@ return *Unwrapped image*
 Mention the folder here and it will retrieve all the tiff files from the folder. Default is tiff files. If other format, this function need to be changed.<br>
 returns *List of image files ordered*
 
-10. `unwrap_folder(folder, no_layers, use_layer_point, border_type)`<br>
+10. `unwrap_folder_single_process(folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
 Unwrap all the images inside a folder saved as .tiff files.<br>
 folder = full path where the files are located. <br>
 no_layers = layers to unwrap<br>
 user_layer_point = Use start point of the algorithm. Default is None.<br>
 border_type = default is convex hull, if countour is needed add "c", as a string.<br>
+destination_folder= None and save it as folder "Unwrapped", unless you have a different name leave it as such.
 returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with the same name with prefix as "unwrapped".<br>
 
 
 11. `unwrap_folder_multi_process(No_process, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+Unwrap all the images, by splitting the number of images into user defined value and unwrapping them in parallel. Faster than `unwrap_folder`.<br>
+No_process = number of processes to split. Usually this can be the number of cores available in the computer. Putting higher number wont help unless you have enough cores.<br>
+folder = full path where the files are located. <br>
+no_layers = layers to unwrap<br>
+user_layer_point = Use start point of the algorithm. Default is None.<br>
+border_type = default is convex hull, if countour is needed add "c", as a string.<br>
+destination_folder= None and save it as folder "Unwrapped", unless you have a different name leave it as such.
+returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with the same name with prefix as "unwrapped".<br>
+
+
+
 12. `unwrap_folder_single_process_MP(array, List_of_files, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
-13. `unwrap_folder_single_process(folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
-14. `save_unwrapped_folder(current_folder, destination_folder=None, Layer_image, file)` <br>
-15. `save_single_image(current_folder, destination_folder=None, Layer_image, file)`<br>
-16. `get_first_layer_contour(image)`<br>
-17. `get_first_layer_convex(image)`<br>
-18. `get_image_raw_first(folder, file, extraction_type=None)` <br>
+The target function to parallelize the process of 'unwrap_folder_multi_process'. <b>
+array = list of indices of the images split based on the number of processes given as an input.<br>
+List_of_files = list of tiff files determined by `get_files`.<br>
+folder = full path where the files are located. <br>
+no_layers = layers to unwrap<br>
+user_layer_point = Use start point of the algorithm. Default is None.<br>
+border_type = default is convex hull, if countour is needed add "c", as a string.<br>
+destination_folder= None and save it as folder "Unwrapped", unless you have a different name leave it as such.
+returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with the same name with prefix as "unwrapped".<br>
+
+    
+13. `save_unwrapped_folder(current_folder, destination_folder=None, Layer_image, file)` <br>
+
+14. `save_single_image(current_folder, destination_folder=None, Layer_image, file)`<br>
+15. `get_first_layer_contour(image)`<br>
+16. `get_first_layer_convex(image)`<br>
+17. `get_image_raw_first(folder, file, extraction_type=None)` <br>
 
