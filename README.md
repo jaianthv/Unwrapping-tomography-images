@@ -126,17 +126,30 @@ list_data_length = length of each layer unwrapped.<br>
 start, end, list of indices of each layers in list_data_length<br>
 
 5. `order_layers(length_layer_one, new_layer_array)`<br>
+The lenth of the unwrapped layers decreases radially inwards, this function will assess the length of each layers and resize the layers by padding the edges with zeros. Each layers unwrapped will have the same length after this.<br>
+returns *Unwrapped image with padding*
+  
 
+7. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
+This function unwraps a single image into user defined number of layers.<br>
+No_of_layers = depending on the size of the image. Tested upto 200 layers on a large tablet. <br>
+image = outer layer image by contour or convex hull. <br>
+raw_image = orignal image, with no changes applied <br>
+use_layer_start_point = Use start point from the algorithm from the second layer to unwrap. Default determine by drawing a line. To yes this type a string eg. "yes".<br>
+return *Unwrapped image* 
 
-6. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
-7. `get_files(folder)` <br>
-8. `unwrap_folder(folder, no_layers, use_layer_point, border_type)`<br>
-9. `unwrap_folder_multi_process(No_process, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
-10. `unwrap_folder_single_process_MP(array, List_of_files, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
-11. `unwrap_folder_single_process(folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
-12. `save_unwrapped_folder(current_folder, destination_folder=None, Layer_image, file)` <br>
-13. `save_single_image(current_folder, destination_folder=None, Layer_image, file)`<br>
-14. `get_first_layer_contour(image)`<br>
-15. `get_first_layer_convex(image)`<br>
-16. `get_image_raw_first(folder, file, extraction_type=None)` <br>
+8. `get_files(folder)` <br>
+Mention the folder here and it will retrieve all the tiff files from the folder. Default is tiff files. If other format, this function need to be changed.<br>
+returns *List of image files ordered*
+
+10. `unwrap_folder(folder, no_layers, use_layer_point, border_type)`<br>
+
+11. `unwrap_folder_multi_process(No_process, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+12. `unwrap_folder_single_process_MP(array, List_of_files, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+13. `unwrap_folder_single_process(folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+14. `save_unwrapped_folder(current_folder, destination_folder=None, Layer_image, file)` <br>
+15. `save_single_image(current_folder, destination_folder=None, Layer_image, file)`<br>
+16. `get_first_layer_contour(image)`<br>
+17. `get_first_layer_convex(image)`<br>
+18. `get_image_raw_first(folder, file, extraction_type=None)` <br>
 
