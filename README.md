@@ -290,17 +290,17 @@ returns *int*
 
 5. Supporting functions of all `Next_coodinate` functions described before.<br>
 
-   5.1. For `Next_coordinate`<br>
-        :5.1.1. `find_correct_point(center_x, center_y, [x-1,y], [x+1,y], result, reference)`<br>
+    5.1. For `Next_coordinate`<br>
+            5.1.1. `find_correct_point(center_x, center_y, [x-1,y], [x+1,y], result, reference)`<br>
                 Checks if the next concentric pixel in the direction towards the center of the object.<br>
                 returns *new x and y coordinate*<br>
-        :5.1.2 `find_right_order(previous_point, Next_coordinate_layer_1, Next_coordinate_layer_2)`<br>
+            5.1.2 `find_right_order(previous_point, Next_coordinate_layer_1, Next_coordinate_layer_2)`<br>
                Same as 5.1.1, however applied when operating on diagonal matrix<br>
                returns *new x and y coordinates*<br>
 
-  5.2. For `Next_coordinate_fast`<br>
-       5.2.1. `Extend_point_horizontal`<br>
-       5.2.2. `Extend_point_vertical`<br>
-       5.2.3. `guess_orienHOV`<br>
+    5.2. For `Next_coordinate_fast`<br>
+           5.2.1. `Extend_point_horizontal`<br>
+           5.2.2. `Extend_point_vertical`<br>
+           5.2.3. `guess_orienHOV`<br>
 
 
