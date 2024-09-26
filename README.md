@@ -277,7 +277,8 @@ carries out elemet wise multiplication and get the get the sum of the resulting 
 returns *int*
 
 
-4. The following functions are same but split into three for layer-by-layer extraction, multiple layer extraction(_fast) and objects with open ends (_open_ends).<br>
+4. The following functions are same but split into three for layer-by-layer extraction, multiple layer extraction(_fast) and objects with open ends (_open_ends). This function analyses the result from the `Operate_matrix` function and returns the next pixel the directional matrix need to go, and the concentric pixel or pixels to be extracted.<br>
+
 4.1. `Next_coordinate(result,x,y,previous_point, center_x, center_y, Position_matrix, remove_data, reference)` <br>
       returns *return next_coordinate (position of the next pixel to go in the current line), Next_coordinate_layer (position of the concentric pixel towards the center of the object relative to the current pixel), remove_coordinate (if a defective pixel is present, from the old version, will be removed in the future.)*
 
@@ -289,5 +290,17 @@ returns *int*
 
 5. Supporting functions of all `Next_coodinate` functions described before.<br>
 
+   5.1. For `Next_coordinate`<br>
+        5.1.1. `find_correct_point(center_x, center_y, [x-1,y], [x+1,y], result, reference)`<br>
+                Checks if the next concentric pixel in the direction towards the center of the object.<br>
+                returns *new x and y coordinate*<br>
+        5.1.2 `find_right_order(previous_point, Next_coordinate_layer_1, Next_coordinate_layer_2)`<br>
+               Same as 5.1.1, however applied when operating on diagonal matrix<br>
+               returns *new x and y coordinates*<br>
+
+  5.2. For `Next_coordinate_fast`<br>
+       5.2.1. `Extend_point_horizontal`<br>
+       5.2.2. `Extend_point_vertical`<br>
+       5.2.3. `guess_orienHOV`<br>
 
 
