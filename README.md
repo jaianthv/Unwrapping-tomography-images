@@ -92,16 +92,13 @@ returns *image with corrected pixels*
 
 ### *Unwrap_runner.py*
 
+Unwrapping functions<br>
+
 1. `unwrap_single_line(img, start_point_est)`<br>
 img = image with single line <br>
 start_point_est = default is None, this option uses the first point estimated by the unwrapping algorithm for each concentric layer. If it is not used, it uses the function `find_point` in `Utils.py`, and estimate starting point each time a new concentric layer is determined.
 returns *x_coordinates, y_coordinates of unwrapped line, Next concentric layer, by default the starting point on the new layer determined by the algorithm*
 
-2. `get_image_value(raw_image,x,y)`<br>
-This function will get the image values of the unwrapped layer coordinates.<br>
-raw_image = the original image which need to be unwrapped <br>
-x,y = x and y coordinates obtained from the unwrapping algorithm (`unwrap_single_line`)<br>
-return *list of pixel value of the unwrapped coordinates in a 1D array*
 
 3. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
 Unwrap a given image with the given number of layers.<br>
@@ -110,18 +107,7 @@ image = Outer line/reference image. <br>
 raw_image = image to be unwrapped, with no change in the bitness. <br>
 use_layer_start_point = default = None, you can put "Yes", then starting point for the next concentric layer will be taken from the algorithm. see `unwrap_single_line`, `find_point` in `Utils.py`<br>
 returns *unwrapped image*
-4. `convert_2_imageD(array_1D,number,list_data_length, start, end)` <br>
-The Unwrapped coordinates are stored as a single array, they are resized in this function. <br>
-array_1D = pixel vaules of the unwrapped image<br>
-number = number of layers actually unwrapped by the algorithm, may change with the user input if the volume limit defined `close_2_end` in `Utils.py` is reached.<br>
-list_data_length = length of each layer unwrapped.<br>
-start, end, list of indices of each layers in list_data_length<br>
-returns *output of order_layer()*
 
-5. `order_layers(length_layer_one, new_layer_array)`<br>
-The lenth of the unwrapped layers decreases radially inwards, this function will assess the length of each layers and resize the layers by padding the edges with zeros. Each layers unwrapped will have the same length after this.<br>
-returns *Unwrapped image with padding*
-  
 
 7. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
 This function unwraps a single image into user defined number of layers.<br>
@@ -131,9 +117,7 @@ raw_image = orignal image, with no changes applied <br>
 use_layer_start_point = Use start point from the algorithm from the second layer to unwrap. Default determine by drawing a line. To yes this type a string eg. "yes".<br>
 return *Unwrapped image* 
 
-8. `get_files(folder)` <br>
-Mention the folder here and it will retrieve all the tiff files from the folder. Default is tiff files. If other format, this function need to be changed.<br>
-returns *List of image files ordered*
+
 
 10. `unwrap_folder_single_process(folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
 Unwrap all the images inside a folder saved as .tiff files.<br>
@@ -168,6 +152,42 @@ border_type = default is convex hull, if countour is needed add "c", as a string
 destination_folder= None and save it as folder "Unwrapped", unless you have a different name leave it as such.
 returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with the same name with prefix as "unwrapped".<br>
 
+
+Unwrap fast - not a line by line extraction <br>
+
+13. `unwrap_single_multiline_closed(img, raw_image, layers_2_extract)`
+
+14. `unwrap_folder_multiline_closed_single_process(folder, layers_2_extract, border_type=None, destination_folder=None)`
+15. `unwrap_folder_multiline_closed_single_MP(array, List_of_files, folder, no_layers, border_type=None, destination_folder=None)`
+16. `unwrap_folder_multiline_closed_multi_process(No_process, folder, no_layers, border_type=None, destination_folder=None)`
+
+Unwrap open ends - not line by line extraction<br>
+
+17. `unwrap_image_multiline_open(shape_image, image, layers_2_extract)` <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+save functions <br>
     
 13. `save_unwrapped_folder(current_folder, destination_folder=None, Layer_image, file)` <br>
 This function is used inside unwrapping folder, stores the unwrapped images in a separate folder, default is "Unwrapped".<br>
@@ -176,6 +196,12 @@ returns *None*
 14. `save_single_image(current_folder, destination_folder=None, Layer_image, file)`<br>
 This function is used to save single unwrapped image, unless specified, the unwrapped image will be saved in the same directory as a source image with "unwrapped" as prefix.<br>
 returns *None*
+
+Load data functions/preprocess functions <br>
+
+8. `get_files(folder)` <br>
+Mention the folder here and it will retrieve all the tiff files from the folder. Default is tiff files. If other format, this function need to be changed.<br>
+returns *List of image files ordered*
 
 16. `get_first_layer_contour(image)`<br>
 To determine the outer reference layer based on contour points.<br>
@@ -191,5 +217,37 @@ folder = path/location of the folder<br>
 file = name of the file as string.<br>
 extraction_type = default is convex hull type. IF other wise, enter "c" or "C" here.
 
- 21. 'get_image_value_fast(raw_image, coor)'
+
+
+
+Unwrap supporting functions <br>
+
+2. `get_image_value(raw_image,x,y)`<br>
+This function will get the image values of the unwrapped layer coordinates.<br>
+raw_image = the original image which need to be unwrapped <br>
+x,y = x and y coordinates obtained from the unwrapping algorithm (`unwrap_single_line`)<br>
+return *list of pixel value of the unwrapped coordinates in a 1D array*
+
+
+
+
+21. `get_image_value_fast(raw_image, coor)`
+
+22. `get_image_value_fast(raw_image,coor)`
+
+
+4. `convert_2_imageD(array_1D,number,list_data_length, start, end)` <br>
+The Unwrapped coordinates are stored as a single array, they are resized in this function. <br>
+array_1D = pixel vaules of the unwrapped image<br>
+number = number of layers actually unwrapped by the algorithm, may change with the user input if the volume limit defined `close_2_end` in `Utils.py` is reached.<br>
+list_data_length = length of each layer unwrapped.<br>
+start, end, list of indices of each layers in list_data_length<br>
+returns *output of order_layer()*
+
+5. `order_layers(length_layer_one, new_layer_array)`<br>
+The lenth of the unwrapped layers decreases radially inwards, this function will assess the length of each layers and resize the layers by padding the edges with zeros. Each layers unwrapped will have the same length after this.<br>
+returns *Unwrapped image with padding*
+
+
+
 
