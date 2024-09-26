@@ -262,6 +262,32 @@ returns *output of order_layer()*
 The lenth of the unwrapped layers decreases radially inwards, this function will assess the length of each layers and resize the layers by padding the edges with zeros. Each layers unwrapped will have the same length after this.<br>
 returns *Unwrapped image with padding*
 
+### *Kernel_operation.py*
+
+1. `get_image_matrix(Inner_layer_segmented,x,y)`<br>
+Inner_layer_segmented = 2d, np.array, with reference line of the image to be unwrapped.
+x,y = coordinates.
+returns *2d, 3x3 array with x,y in the center -   [[x-1,y+1],[x,y+1],[x+1,y+1]],[[x-1,y],[x,y],[x+1,y]],[[x-1,y-1],[x,y-1],[x+1,y-1]]*
+
+2. `kernel_matrix()`<br>
+returns *directional matrix [[-5, 4, 15], [-4, -1, -16], [10, 8, -20]]*
+
+3. `Operate_matrix(Position_matrix, Kernel)`
+carries out elemet wise multiplication and get the get the sum of the resulting 3x3 array.<br>
+returns *int*
+
+
+4. The following functions are same but split into three for layer-by-layer extraction, multiple layer extraction(_fast) and objects with open ends (_open_ends).<br>
+4.1. `Next_coordinate(result,x,y,previous_point, center_x, center_y, Position_matrix, remove_data, reference)` <br>
+      returns *return next_coordinate (position of the next pixel to go in the current line), Next_coordinate_layer (position of the concentric pixel towards the center of the object relative to the current pixel), remove_coordinate (if a defective pixel is present, from the old version, will be removed in the future.)*
+
+4.2. `Next_coordinate_fast(result,x,y,previous_point, center_x, center_y, Position_matrix, reference, pts)`<br>
+      returns *return next_coordinate (position of the next pixel to go in the current line), Extend_coordinate (list of coordinates of the concentric layers)*
+
+4.3. `Next_coordinate_open_ends(result,x,y,previous_point, center_x, center_y, Position_matrix, reference, pts)`
+      same as `Next_coordinate_fast` with few different supporting functions. Hence it is been separated. 
+
+5. Supporting functions of all `Next_coodinate` functions described before.<br>
 
 
 
