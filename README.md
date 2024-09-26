@@ -191,5 +191,5 @@ folder = path/location of the folder<br>
 file = name of the file as string.<br>
 extraction_type = default is convex hull type. IF other wise, enter "c" or "C" here.
 
-  get_image_value_fast(raw_image, coor):
+ 21. 'get_image_value_fast(raw_image, coor)'
 
