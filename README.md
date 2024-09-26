@@ -263,6 +263,9 @@ The lenth of the unwrapped layers decreases radially inwards, this function will
 returns *Unwrapped image with padding*
 
 ### *Kernel_operation.py*
+ In addtion to the list of functions here this code also imports few functions from 'Kernel_calculator.py'. It is not required in the new version however, will be eventually removed. <br>
+
+
 
 1. `get_image_matrix(Inner_layer_segmented,x,y)`<br>
 Inner_layer_segmented = 2d, np.array, with reference line of the image to be unwrapped.
