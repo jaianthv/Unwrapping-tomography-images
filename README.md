@@ -279,13 +279,13 @@ returns *int*
 
 4. The following functions are same but split into three for layer-by-layer extraction, multiple layer extraction(_fast) and objects with open ends (_open_ends). This function analyses the result from the `Operate_matrix` function and returns the next pixel the directional matrix need to go, and the concentric pixel or pixels to be extracted.<br>
 
-4.1. `Next_coordinate(result,x,y,previous_point, center_x, center_y, Position_matrix, remove_data, reference)` <br>
-      returns *return next_coordinate (position of the next pixel to go in the current line), Next_coordinate_layer (position of the concentric pixel towards the center of the object relative to the current pixel), remove_coordinate (if a defective pixel is present, from the old version, will be removed in the future.)*
+    4.1. `Next_coordinate(result,x,y,previous_point, center_x, center_y, Position_matrix, remove_data, reference)` <br>
+      returns *return next_coordinate (position of the next pixel to go in the current line), Next_coordinate_layer (position of the concentric pixel towards the center of the object relative to the current pixel), remove_coordinate (if a defective pixel is present, from the old version, will be removed in the future.)*<br>
 
-4.2. `Next_coordinate_fast(result,x,y,previous_point, center_x, center_y, Position_matrix, reference, pts)`<br>
-      returns *return next_coordinate (position of the next pixel to go in the current line), Extend_coordinate (list of coordinates of the concentric layers)*
+    4.2. `Next_coordinate_fast(result,x,y,previous_point, center_x, center_y, Position_matrix, reference, pts)`<br>
+      returns *return next_coordinate (position of the next pixel to go in the current line), Extend_coordinate (list of coordinates of the concentric layers)*<br>
 
-4.3. `Next_coordinate_open_ends(result,x,y,previous_point, center_x, center_y, Position_matrix, reference, pts)`<br>
+    4.3. `Next_coordinate_open_ends(result,x,y,previous_point, center_x, center_y, Position_matrix, reference, pts)`<br>
       same as `Next_coordinate_fast` with few different supporting functions. Hence it is been separated. <br>
 
 5. Supporting functions of all `Next_coodinate` functions described before.<br>
