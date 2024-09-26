@@ -317,3 +317,8 @@ returns *int*
                5.2.2. `Extend_point_vertical_OE`<br>
                5.2.3. `guess_orienHOV_OE`<br>
 
+6. `determine_second(shape_image,first_position, x, y)` <br>
+It is used to get the second point from the open end.
+returns *coodinates of the second point connected from the given coordinate*
+
+
