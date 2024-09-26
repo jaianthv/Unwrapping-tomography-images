@@ -285,8 +285,8 @@ returns *int*
 4.2. `Next_coordinate_fast(result,x,y,previous_point, center_x, center_y, Position_matrix, reference, pts)`<br>
       returns *return next_coordinate (position of the next pixel to go in the current line), Extend_coordinate (list of coordinates of the concentric layers)*
 
-4.3. `Next_coordinate_open_ends(result,x,y,previous_point, center_x, center_y, Position_matrix, reference, pts)`
-      same as `Next_coordinate_fast` with few different supporting functions. Hence it is been separated. 
+4.3. `Next_coordinate_open_ends(result,x,y,previous_point, center_x, center_y, Position_matrix, reference, pts)`<br>
+      same as `Next_coordinate_fast` with few different supporting functions. Hence it is been separated. <br>
 
 5. Supporting functions of all `Next_coodinate` functions described before.<br>
 
@@ -300,7 +300,15 @@ returns *int*
 
     5.2. For `Next_coordinate_fast`<br>
                5.2.1. `Extend_point_horizontal`<br>
+               returns *list of array corresponding to the concentric layers in horizontal direction*<br>
                5.2.2. `Extend_point_vertical`<br>
+               returns *list of array corresponding to the concentric layers in vertical direction*<br>
                5.2.3. `guess_orienHOV`<br>
-    5.3 For
+               returns *Guess weather with the pixel orientation horizontal or vertical layers are better based on which axis points towards the center of the object - list of array corresponding to the concentric layers in horizontal direction*<br>
+    5.3 For `Next_coordinate_open_ends`<br>
+    Same as 5.2, except minor changes in the input paramters.<br>
+    Description same as above with different names and input variables.
+               5.2.1. `Extend_point_horizontal_OE`<br>
+               5.2.2. `Extend_point_vertical_OE`<br>
+               5.2.3. `guess_orienHOV_OE`<br>
 
