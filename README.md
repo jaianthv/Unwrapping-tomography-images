@@ -186,5 +186,10 @@ To determine the outer reference layer based on convex hull.<br>
 image = np.array, binary, background "0", object "1". <br>
 returns *image with outer layer value 1 and width 1*
 18. `get_image_raw_first(folder, file, extraction_type=None)` <br>
+This functions calls `get_first_layer_contour` or `get_first_layer_convex` depending on the user input. Here it is important the image to be unwrapped is already segmented from the background. The image can be of any bitness. But the background must be "0". The object can have any value.<br>
+folder = path/location of the folder<br>
+file = name of the file as string.<br>
+extraction_type = default is convex hull type. IF other wise, enter "c" or "C" here.
 
+  get_image_value_fast(raw_image, coor):
 
