@@ -243,7 +243,11 @@ return *list of pixel value of the unwrapped coordinates in a 1D array*
 
 
 
-2. `get_image_value_fast(raw_image, coor)`
+2. `get_image_value_fast(raw_image, coor)`<br>
+This function will get the image values of the unwrapped layers coordinates, when multiple layers are extracted using `unwrap_single_multiline_closed`.<br>
+raw_image = the original image which need to be unwrapped <br>
+coor = list of x and y coordinates obtained from the unwrapping algorithm (`unwrap_single_multiline_closed`)<br>
+return *list of pixel value of the unwrapped coordinates in an order in a 2D array*
 
 
 4. `convert_2_imageD(array_1D,number,list_data_length, start, end)` <br>
