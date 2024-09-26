@@ -298,6 +298,8 @@ returns *int*
                Same as 5.1.1, however applied when operating on diagonal matrix<br>
                returns *new x and y coordinates*<br>
 
+
+
     5.2. For `Next_coordinate_fast`<br>
                5.2.1. `Extend_point_horizontal`<br>
                returns *list of array corresponding to the concentric layers in horizontal direction*<br>
@@ -305,6 +307,9 @@ returns *int*
                returns *list of array corresponding to the concentric layers in vertical direction*<br>
                5.2.3. `guess_orienHOV`<br>
                returns *Guess weather with the pixel orientation horizontal or vertical layers are better based on which axis points towards the center of the object - list of array corresponding to the concentric layers in horizontal direction*<br>
+
+
+
     5.3 For `Next_coordinate_open_ends`<br>
     Same as 5.2, except minor changes in the input paramters.<br>
     Description same as above with different names and input variables.
