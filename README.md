@@ -1,11 +1,24 @@
 # Unwrapping-tomography-images
 The unwrapping codes developed can digitally unroll 2D slices of a 3D object measured by a tomography technique. Few associated functions can be used identify only external surface and characterize surface roughness.
 
+## List of python modules needed
+1. Numpy
+2. OpenCV
+3. Pillow (PIL)
+4. matplotlib
+5. skimage
+6. multiprocessing
+7. os
+8. sys
+
 ## List of python scripts
-1. Utils.py
-2. Kernel_operation.py
-3. Unwrap_runner.py
-4. Unwrap_New.py
+1. Utils.py - contains functions required for preprocessing the image.
+   
+2. Kernel_operation.py - contains funtions required to perform kernel operation and analyze the result. Contains list of if statements. Please refer the manuscript.
+   
+3. Unwrap_runner.py - Contains functions which by using Kernel_operation.py unwraps the given image.<br>
+   
+4. Unwrap_image_New.py - Contains example codes which uses the functions in Unwrap_runner.py to unwrap single image or list of images in the folder. One can simply use this code to run the unwrapping procedure.<br>
 
 
 ## List of functions available
