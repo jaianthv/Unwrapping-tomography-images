@@ -100,7 +100,7 @@ start_point_est = default is None, this option uses the first point estimated by
 returns *x_coordinates, y_coordinates of unwrapped line, Next concentric layer, by default the starting point on the new layer determined by the algorithm*
 
 
-3. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
+2. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
 Unwrap a given image with the given number of layers.<br>
 No_of_layers = depends on the image, even if you put a large number, the interation will stop once 99 % volume is transformed when using contour and 99.9 5 when using convex hull approach.<br>
 image = Outer line/reference image. <br>
@@ -109,7 +109,7 @@ use_layer_start_point = default = None, you can put "Yes", then starting point f
 returns *unwrapped image*
 
 
-7. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
+3. `unwrap_layers(No_of_layers, image, raw_image, use_layer_start_point)` <br>
 This function unwraps a single image into user defined number of layers.<br>
 No_of_layers = depending on the size of the image. Tested upto 200 layers on a large tablet. <br>
 image = outer layer image by contour or convex hull. <br>
@@ -119,7 +119,7 @@ return *Unwrapped image*
 
 
 
-10. `unwrap_folder_single_process(folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+4. `unwrap_folder_single_process(folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
 Unwrap all the images inside a folder saved as .tiff files.<br>
 folder = full path where the files are located. <br>
 no_layers = layers to unwrap<br>
@@ -129,7 +129,7 @@ destination_folder= None and save it as folder "Unwrapped", unless you have a di
 returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with the same name with prefix as "unwrapped".<br>
 
 
-11. `unwrap_folder_multi_process(No_process, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+5. `unwrap_folder_multi_process(No_process, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
 Unwrap all the images, by splitting the number of images into user defined value and unwrapping them in parallel. Faster than `unwrap_folder`.<br>
 No_process = number of processes to split. Usually this can be the number of cores available in the computer. Putting higher number wont help unless you have enough cores.<br>
 folder = full path where the files are located. <br>
@@ -141,7 +141,7 @@ returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with th
 
 
 
-12. `unwrap_folder_single_process_MP(array, List_of_files, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
+6. `unwrap_folder_single_process_MP(array, List_of_files, folder, no_layers, use_layer_point=None, border_type=None, destination_folder=None)` <br>
 The target function to parallelize the process of 'unwrap_folder_multi_process'. <b>
 array = list of indices of the images split based on the number of processes given as an input.<br>
 List_of_files = list of tiff files determined by `get_files`.<br>
@@ -155,33 +155,43 @@ returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with th
 
 Unwrap fast - not a line by line extraction <br>
 
-13. `unwrap_single_multiline_closed(img, raw_image, layers_2_extract)`
+1. `unwrap_single_multiline_closed(img, raw_image, layers_2_extract)`<br>
+img = 2d -np.array, reference line to be unwrapped <br>
+raw_image = 2d-np.array, image to be unwrapped.<br>
+layers_2_extract = int, number of layers to be unwrapped <br>
+returns *unwrapped raw image* <br>
 
-14. `unwrap_folder_multiline_closed_single_process(folder, layers_2_extract, border_type=None, destination_folder=None)`
-15. `unwrap_folder_multiline_closed_single_MP(array, List_of_files, folder, no_layers, border_type=None, destination_folder=None)`
-16. `unwrap_folder_multiline_closed_multi_process(No_process, folder, no_layers, border_type=None, destination_folder=None)`
+2. `unwrap_folder_multiline_closed_single_process(folder, layers_2_extract, border_type=None, destination_folder=None)`<br>
+folder = str, path where the files are located.<br>
+layers_2_extract = int, number of layers to be unwrapped <br>
+border_type=None, default convex hull, type string "c" or "C" for contour.<br>
+destination_folder=None, default folder name "Unwrapped", specify here if otherwise. <br>
+
+
+3. `unwrap_folder_multiline_closed_single_MP(array, List_of_files, folder, no_layers, border_type=None, destination_folder=None)` <br>
+Subprocess called in a multiprocess unwrapping `unwrap_folder_multiline_closed_multi_process`.<br>
+array = list of split indecies to access the list of tiff files in the subprocess.<br>
+returns *None*
+
+
+4. `unwrap_folder_multiline_closed_multi_process(No_process, folder, no_layers, border_type=None, destination_folder=None)`
+Unwrap all the images, by splitting the number of images into user defined value and unwrapping them in parallel.<br>
+No_process = number of processes to split. Usually this can be the number of cores available in the computer. Putting higher number wont help unless you have enough cores.<br>
+folder = full path where the files are located. <br>
+no_layers = layers to unwrap<br>
+border_type = default is convex hull, if countour is needed add "c", as a string.<br>
+destination_folder= None and save it as folder "Unwrapped", unless you have a different name leave it as such.
+returns *None* Opens a folder "Unwrapped" and saves the unwrapped images with the same name with prefix as "unwrapped".<br>
+
+
 
 Unwrap open ends - not line by line extraction<br>
 
-17. `unwrap_image_multiline_open(shape_image, image, layers_2_extract)` <br>
+1. `unwrap_image_multiline_open(shape_image, image, layers_2_extract)` <br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+shape_image = 2d np.array, with a reference line with width one pixel, following the shape of the object to be unwrapped.
+image = 2d np.array, raw image to be unwrapped<br>
+layers_2_extract = int, number of layers to be extracted. <br>
 
 
 
@@ -189,29 +199,31 @@ Unwrap open ends - not line by line extraction<br>
 
 save functions <br>
     
-13. `save_unwrapped_folder(current_folder, destination_folder=None, Layer_image, file)` <br>
+1. `save_unwrapped_folder(current_folder, destination_folder=None, Layer_image, file)` <br>
 This function is used inside unwrapping folder, stores the unwrapped images in a separate folder, default is "Unwrapped".<br>
 returns *None*
 
-14. `save_single_image(current_folder, destination_folder=None, Layer_image, file)`<br>
+2. `save_single_image(current_folder, destination_folder=None, Layer_image, file)`<br>
 This function is used to save single unwrapped image, unless specified, the unwrapped image will be saved in the same directory as a source image with "unwrapped" as prefix.<br>
 returns *None*
 
 Load data functions/preprocess functions <br>
 
-8. `get_files(folder)` <br>
+1. `get_files(folder)` <br>
 Mention the folder here and it will retrieve all the tiff files from the folder. Default is tiff files. If other format, this function need to be changed.<br>
 returns *List of image files ordered*
 
-16. `get_first_layer_contour(image)`<br>
+2. `get_first_layer_contour(image)`<br>
 To determine the outer reference layer based on contour points.<br>
 image = np.array, binary, background "0", object "1". <br>
 returns *image with outer layer value 1 and width 1*
-17. `get_first_layer_convex(image)`<br>
+
+3. `get_first_layer_convex(image)`<br>
 To determine the outer reference layer based on convex hull.<br>
 image = np.array, binary, background "0", object "1". <br>
 returns *image with outer layer value 1 and width 1*
-18. `get_image_raw_first(folder, file, extraction_type=None)` <br>
+
+4. `get_image_raw_first(folder, file, extraction_type=None)` <br>
 This functions calls `get_first_layer_contour` or `get_first_layer_convex` depending on the user input. Here it is important the image to be unwrapped is already segmented from the background. The image can be of any bitness. But the background must be "0". The object can have any value.<br>
 folder = path/location of the folder<br>
 file = name of the file as string.<br>
@@ -222,7 +234,7 @@ extraction_type = default is convex hull type. IF other wise, enter "c" or "C" h
 
 Unwrap supporting functions <br>
 
-2. `get_image_value(raw_image,x,y)`<br>
+1. `get_image_value(raw_image,x,y)`<br>
 This function will get the image values of the unwrapped layer coordinates.<br>
 raw_image = the original image which need to be unwrapped <br>
 x,y = x and y coordinates obtained from the unwrapping algorithm (`unwrap_single_line`)<br>
@@ -231,9 +243,7 @@ return *list of pixel value of the unwrapped coordinates in a 1D array*
 
 
 
-21. `get_image_value_fast(raw_image, coor)`
-
-22. `get_image_value_fast(raw_image,coor)`
+2. `get_image_value_fast(raw_image, coor)`
 
 
 4. `convert_2_imageD(array_1D,number,list_data_length, start, end)` <br>
