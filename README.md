@@ -36,7 +36,8 @@ The unwrapping codes developed can digitally unroll 2D slices of a 3D object mea
 2. Copy all the python scripts mentioned above in the sample folder.
 3. Use Unwrap_image_Main.py to execute the unwrapping procedure.
 #### Configure Unwrap_image_Main.py<br>
-This is an example script showing how one can implement the unwrapping procedure on a single slice image or a stack of slices for the whole 3D object. Feel free to modify to your convenience. 
+This is an example script showing how one can implement the unwrapping procedure on a single slice image or a stack of slices for the whole 3D object. Feel free to modify to your convenience. <br>
+Input parameters to chanage - No of layers, border type - default is convex hull, if needed one can change this, only for multi processing change the numerb 
 
 
 
