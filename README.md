@@ -304,7 +304,7 @@ returns *output of order_layer()*
 The lenth of the unwrapped layers decreases radially inwards, this function will assess the length of each layers and resize the layers by padding the edges with zeros. Each layers unwrapped will have the same length after this.<br>
 returns *Unwrapped image with padding*
 
-### *Kernel_operation.py*
+### *Kernel_operation_new.py*
  In addtion to the list of functions here this code also imports few functions from 'Kernel_calculator.py'. It is not required in the new version however, will be eventually removed. <br>
 
 
