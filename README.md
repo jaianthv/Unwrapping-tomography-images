@@ -28,6 +28,8 @@ The unwrapping codes developed can digitally unroll 2D slices of a 3D object mea
 
 5. Pre_process_battery.py - The preprocessing codes used to get the battery reference layer to unwrap.
 
+6. Kernel_calculator.py - contains few functions to remove defects, however, it is not needed and will be removed in the next version.
+
 
 
 
