@@ -5,7 +5,7 @@ The unwrapping codes developed can digitally unroll 2D slices of a 3D object mea
 
 
 
-<IMG SRC="Media1.gif" height="500" width="900"><br>
+<IMG SRC="Media1.gif" height="500" width="500"><br>
 
 ## List of python modules needed
 1. Numpy
