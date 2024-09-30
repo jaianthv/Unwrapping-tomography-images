@@ -24,7 +24,20 @@ The unwrapping codes developed can digitally unroll 2D slices of a 3D object mea
    
 3. Unwrap_runner.py - Contains functions which by using Kernel_operation.py unwraps the given image.<br>
    
-4. Unwrap_image_New.py - Contains example codes which uses the functions in Unwrap_runner.py to unwrap single image or list of images in the folder. One can simply use this code to run the unwrapping procedure.<br>
+4. Unwrap_image_Main.py - Contains example codes which uses the functions in Unwrap_runner.py to unwrap single image or list of images in the folder. One can simply use this code to run the unwrapping procedure.<br>
+
+5. Pre_process_battery.py - The preprocessing codes used to get the battery reference layer to unwrap.
+
+
+
+
+## How to use this code
+1. Install the necessary modules.
+2. Copy all the python scripts mentioned above in the sample folder.
+3. Use Unwrap_image_Main.py to execute the unwrapping procedure.
+#### Configure Unwrap_image_Main.py<br>
+This is an example script showing how one can implement the unwrapping procedure on a single slice image or a stack of slices for the whole 3D object. Feel free to modify to your convenience. 
+
 
 
 ## List of functions available
