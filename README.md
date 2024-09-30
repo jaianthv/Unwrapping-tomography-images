@@ -20,7 +20,7 @@ The unwrapping codes developed can digitally unroll 2D slices of a 3D object mea
 ## List of python scripts
 1. Utils.py - contains functions required for preprocessing the image.
    
-2. Kernel_operation.py - contains funtions required to perform kernel operation and analyze the result. Contains list of if statements. Please refer the manuscript.
+2. Kernel_operation_new.py - contains funtions required to perform kernel operation and analyze the result. Contains list of if statements. Please refer the manuscript.
    
 3. Unwrap_runner.py - Contains functions which by using Kernel_operation.py unwraps the given image.<br>
    
