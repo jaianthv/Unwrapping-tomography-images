@@ -1,6 +1,11 @@
 # Unwrapping-tomography-images
 The unwrapping codes developed can digitally unroll 2D slices of a 3D object measured by a tomography technique. Few associated functions can be used identify only external surface and characterize surface roughness.
 
+
+
+
+<IMG SRC="Media1.gif height="500" width="900"><br>
+
 ## List of python modules needed
 1. Numpy
 2. OpenCV
