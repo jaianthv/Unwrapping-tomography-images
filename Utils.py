@@ -71,7 +71,7 @@ def clean_extra_contours(contours):
     for j in range(0,len(del_item)):
         no_of_contour = len(contours)
         
-        for k in range(0,no_of_contour):
+        for k in range(0,no_of_contours):
             if len(contours[k]) == del_item[j] :
                 del(contours[k])
                 break
@@ -933,3 +933,4 @@ def check_single_contour(image, cx, cy):
            plt.matshow(binary_image)
            plt.title("ITs going above 40")
            plt.show()
+
